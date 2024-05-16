@@ -14,4 +14,4 @@ compatibility_date = "2024-05-13"
 # 45.195.3.82 | Port:443 | CGK-Asia Pacific-Jakarta-51 ms
 # 45.200.9.82 | Port:443 | CGK-Asia Pacific-Jakarta-61 ms
 PASSWORD = "d9530b9f-9d4a-446c-987f-b4ea230e99f4"
-PROXYIP = "45.200.9.82"
+PROXYIP = "35.219.50.99"
