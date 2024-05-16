@@ -1,8 +1,8 @@
-# name = "cf-vless" # todo
-# main = "vless-worker.js"
+name = "cf-vless" # todo
+main = "vless-worker.js"
 
-name = "cf-trojan" # todo
-main = "trojan-worker.js"
+# name = "cf-trojan" # todo
+# main = "trojan-worker.js"
 
 compatibility_date = "2024-05-13"
 
