@@ -99,10 +99,13 @@ export default {
 						});
 					}
 					default:
-						url.hostname = 'piped.kavin.rocks';
-						url.protocol = 'https:';
-						request = new Request(url, request);
-						return await fetch(request);
+						const vlessConfig = getVLESSConfig(userID, request.headers.get('Host'));
+						return new Response(`${vlessConfig}`, {
+							status: 200,
+							headers: {
+								"Content-Type": "text/plain;charset=utf-8",
+							}
+						});
 				}
 			} else {
 				return await vlessOverWSHandler(request);
