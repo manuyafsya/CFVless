@@ -99,12 +99,11 @@ export default {
 						});
 					}
 					default:
-						const vlessConfig = getVLESSConfig(userID, request.headers.get('Host'));
-						return new Response(`${vlessConfig}`, {
+						return new Response(JSON.stringify(request.cf, null, 4), {
 							status: 200,
 							headers: {
-								"Content-Type": "text/plain;charset=utf-8",
-							}
+								"Content-Type": "application/json;charset=utf-8",
+							},
 						});
 				}
 			} else {
