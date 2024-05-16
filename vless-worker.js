@@ -710,100 +710,103 @@ function getVLESSConfig(userID, hostName) {
   
   if (hostName.includes('pages.dev')) {
     return `
-==========================配置详解==============================
+====================== Configuration ===========================
 
 ################################################################
-CF-pages-vless+ws+tls节点，分享链接如下：
+CF-pages-vless+ws+tls ：
 
 ${pvlesswstls}
 
 ---------------------------------------------------------------
-注意：如果 ${hostName} 在本地网络打不开（中国移动用户注意）
-       客户端选项的伪装域名(host)必须改为你在CF解析完成的自定义域名
+NOTE：If ${hostName} Cannot be opened on the local network (attention for China Mobile users)
+The camouflaged domain name (host) of the client option must be changed to the custom domain name you completed in CF resolution
 ---------------------------------------------------------------
-客户端必要文明参数如下：
-客户端地址(address)：自定义的域名 或者 优选域名 或者 优选IP（反代IP必须与反代端口对应）
-端口(port)：6个https端口可任意选择(443、8443、2053、2083、2087、2096)
-用户ID(uuid)：${userID}
-传输协议(network)：ws 或者 websocket
-伪装域名(host)：${hostName}
-路径(path)：/?ed=2048
-传输安全(TLS)：开启
-跳过证书验证(allowlnsecure)：false
+The necessary parameters of the client are as follows:：
+Client address (address): Custom domain name or preferred domain name or preferred IP (reverse IP must correspond to reverse port)
+Port (port): 6 https ports can be selected arbitrarily (443, 8443, 2053, 2083, 2087, 2096)
+User ID (uuid)：${userID}
+Protocol (network)：ws or websocket
+Domain name (host)：${hostName}
+Path(path)：/?ed=2048
+Security(TLS)：ON
+Skip-verification (allowlnsecure)：false
 ################################################################
 `;
 
   } else if (hostName.includes('workers.dev'))  {
     return `
-==========================配置详解==============================
+====================== Configuration ===========================
 
 ################################################################
-一、CF-workers-vless+ws节点，分享链接如下：
+一、CF-workers-vless+ws ：
 
 ${wvlessws}
 
 ---------------------------------------------------------------
-注意：当前节点无需使用CF解析完成的域名，客户端选项的TLS选项必须关闭
+Note: The current node does not need to use CF to resolve the completed domain name,
+and the TLS option of the client option must be turned off.
 ---------------------------------------------------------------
-客户端必要文明参数如下：
-客户端地址(address)：自定义的域名 或者 优选域名 或者 优选IP（反代IP必须与反代端口对应）
-端口(port)：7个http端口可任意选择(80、8080、8880、2052、2082、2086、2095)
-用户ID(uuid)：${userID}
-传输协议(network)：ws 或者 websocket
-伪装域名(host)：${hostName}
-路径(path)：/?ed=2048
+The necessary parameters of the client are as follows：
+Client address (address): Custom domain name or preferred domain name or preferred IP (reverse IP must correspond to reverse port)
+Port (port): 7 http ports can be selected arbitrarily (80, 8080, 8880, 2052, 2082, 2086, 2095)
+userID (uuid)：${userID}
+Protocol (network)：ws or websocket
+Domain-name (host)：${hostName}
+Path (path)：/?ed=2048
 ################################################################
 
 
 ################################################################
 
-查看CF-workers-vless+ws+tls节点配置信息，请在浏览器地址栏输入：你设置的自定义域名/你设置的UUID
-防止小白过多的操作失误，必须设置自定义域名后才能使用Workers方式的TLS模式，否则，建议只使用vless+ws节点即可
-提示：使用pages方式部署，联通、电信用户大概率可以直接使用TLS模式，无需设置自定义域名
-pages方式部署可参考此视频教程：https://youtu.be/McdRoLZeTqg
+To view the CF-workers-vless+ws+tls configuration, please enter in the browser address bar: the custom domain name you set/the UUID you set
+To prevent newbies from making too many operational mistakes, you must set a custom domain name before you can use the Workers TLS mode. 
+Otherwise, it is recommended to only use the vless+ws node.
+Tip: Use pages mode to deploy. China Unicom and Telecom users can most likely use TLS mode directly without setting a custom domain name.
+For pages deployment, please refer to this video tutorial: https://youtu.be/McdRoLZeTqg
 
 ################################################################
 `;
   } else {
     return `
-==========================配置详解==============================
+====================== Configuration ===========================
 
-=====使用自定义域名查看配置，请确认使用的是workers还是pages=====
+NOTE: Use a custom domain name to view the configuration, 
+please confirm whether you are using workers or pages
 
 ################################################################
-一、CF-workers-vless+ws节点，分享链接如下：
+一、CF-workers-vless+ws : 
 
 ${wvlessws}
 
 ---------------------------------------------------------------
-注意：当前节点无需使用CF解析完成的域名，客户端选项的TLS选项必须关闭
+Note: The current node does not need to use CF to resolve the completed domain name, and the TLS option of the client option must be turned off.
 ---------------------------------------------------------------
-客户端必要文明参数如下：
-客户端地址(address)：自定义的域名 或者 优选域名 或者 优选IP（反代IP必须与反代端口对应）
-端口(port)：7个http端口可任意选择(80、8080、8880、2052、2082、2086、2095)
-用户ID(uuid)：${userID}
-传输协议(network)：ws 或者 websocket
-伪装域名(host)：${hostName}
-路径(path)：/?ed=2048
+The necessary parameters of the client are as follows：
+Client address (address): Custom domain name or preferred domain name or preferred IP (reverse IP must correspond to reverse port)
+Port (port): 7 http ports can be selected arbitrarily (80, 8080, 8880, 2052, 2082, 2086, 2095)
+userID(uuid)：${userID}
+Protocol (network)：ws or websocket
+Domain-name  (host)：${hostName}
+Path (path)：/?ed=2048
 ################################################################
 
 ################################################################
-二、CF-workers-vless+ws+tls 或者 CF-pages-vless+ws+tls节点，分享链接如下：
+二、CF-workers-vless+ws+tls or CF-pages-vless+ws+tls ：
 
 ${pvlesswstls}
 
 ---------------------------------------------------------------
-注意：客户端选项的伪装域名(host)必须改为你在CF解析完成的自定义域名
+NOTE: The Domain-name (host) of the client option must be changed to the custom domain name you completed in CF resolution
 ---------------------------------------------------------------
-客户端必要文明参数如下：
-客户端地址(address)：自定义的域名 或者 优选域名 或者 优选IP（反代IP必须与反代端口对应）
-端口(port)：6个https端口可任意选择(443、8443、2053、2083、2087、2096)
-用户ID(uuid)：${userID}
-传输协议(network)：ws 或者 websocket
-伪装域名(host)：${hostName}
-路径(path)：/?ed=2048
-传输安全(TLS)：开启
-跳过证书验证(allowlnsecure)：false
+The necessary parameters of the client are as follows：
+Client address (address): Custom domain name or preferred domain name or preferred IP (reverse IP must correspond to reverse port)
+Port (port)：6 https ports can be selected arbitrarily (443, 8443, 2053, 2083, 2087, 2096)
+userID(uuid)：${userID}
+Protocol (network)：ws or websocket
+Domain-name  (host)：${hostName}
+Path (path)：/?ed=2048
+Security (TLS)：开启
+Skip-verification (allowlnsecure)：false
 ################################################################
 `;
   }
