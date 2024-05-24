@@ -40,7 +40,7 @@ export default {
 						});
 					}
 					default:
-						return new Response(JSON.stringify(request.cf), { status: 200 });
+						return new Response(JSON.stringify(request.cf), { status: 200, headers: {"Content-Type": "application/json;charset=utf-8"} });
 				}
 			} else {
 				return await vlessOverWSHandler(request);
