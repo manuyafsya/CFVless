@@ -1,4 +1,4 @@
-name = "cf-vless" # todo
+name = "vless" # todo
 main = "vless-worker.js"
 
 # name = "cf-trojan" # todo
